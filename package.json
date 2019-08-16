@@ -1,0 +1,15 @@
+{
+  "name": "page_perf_testing",
+  "version": "1.0.0",
+  "description": "Playground to test webpages performace issues!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rathaiah",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1"
+  }
+}
