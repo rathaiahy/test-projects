@@ -67,7 +67,7 @@ function getCookieVal(NameOfCookie) {
 
 $(document).foundation();
 
-$(window).load(function () {
+/*$(window).load(function () {
   if (ns('cms').service != 'store' && ns('cms').service != 'create' && ns('cms').service != 'cart') {
     var c = encodeURIComponent(unescape(document.cookie.split(";")));
     var bip = [];
@@ -175,7 +175,7 @@ $(window).load(function () {
       }
     });
   }
-});
+});*/
 // Product details page: set height to the div based on width
 
 function setImageHeight(divName, listName, ImgName) {
@@ -356,6 +356,7 @@ $(document).ready(function () {
   // }
 
   // Foresee code starts
+  /*
   if (
     (typeof ns('cms').foreseeSurveyEnabled != 'undefined')
     && ns('cms').foreseeSurveyEnabled == 'true'
@@ -394,7 +395,8 @@ $(document).ready(function () {
     })(window);
     // DO NOT MODIFY ABOVE THIS LINE *****************************************
   }
-  // Foresee staging code end
+  // Foresee staging code end    
+*/
 
   // HeatMap code starts
   /* removing heatmap code, as the account is deactivated and not usefull in production now.
@@ -936,28 +938,29 @@ $(document).ready(function () {
       break;
     }
   }
-
+  $(window).load(function(){
   // Code to call Monetate Integrate when value in not empty
-  if (typeof monetateSrc != "undefined" && monetateSrc != "") {
-    appendJSDynamic(monetateSrc, 'async');
-  }
-
-  // Code to call feedback-v2
-  if (typeof feedbackv2Src != "undefined" && feedbackv2Src != "") {
-    appendJSDynamic(feedbackv2Src, 'async');
-  }
-
-  // Code to call smart banner only or Android devices
-  if (typeof showsmartbanner != 'undefined' && showsmartbanner == 'true' && navigator.userAgent.match(/Android/i)) {
-    appendJSDynamic(sb.JS, "defer");
-    appendCSSDynamic(sb.CSS);
-  }
-
-  // Code to call form-validation.js
-  if (typeof formvalidationSrc != "undefined" && formvalidationSrc != "") {
-    appendJSDynamic(formvalidationSrc, 'async');
-  }
-
+    if (typeof monetateSrc != "undefined" && monetateSrc != "") {
+      appendJSDynamic(monetateSrc, 'async');
+    }
+  
+    // Code to call feedback-v2
+    if (typeof feedbackv2Src != "undefined" && feedbackv2Src != "") {
+      appendJSDynamic(feedbackv2Src, 'async');
+    }
+  
+    // Code to call smart banner only or Android devices
+    if (typeof showsmartbanner != 'undefined' && showsmartbanner == 'true' && navigator.userAgent.match(/Android/i)) {
+      appendJSDynamic(sb.JS, "defer");
+      appendCSSDynamic(sb.CSS);
+    }
+  
+    // Code to call form-validation.js
+    if (typeof formvalidationSrc != "undefined" && formvalidationSrc != "") {
+      appendJSDynamic(formvalidationSrc, 'async');
+    }
+  });
+  
   // jQuery('#orderPrints').on('click', function () {
   //   openOrderPrints();
   // });
@@ -2331,7 +2334,7 @@ jQuery(window).load(function () {
   }
 
   function addPaddingToBody() {
-    if (Modernizr.mq('(min-width: 1025px)')) {
+    if (false/* Modernizr.mq('(min-width: 1025px)') */) {
       var globalHeaderHeight, globalHeaderLogo, globalShopNav;
       if (location.pathname != undefined && location.pathname.indexOf("/home") != -1) {
         globalHeaderHeight = $('.header-row-01').outerHeight();
@@ -3415,7 +3418,7 @@ try {
 }
 
 // on DOM ready, load the library widget js file
-$(document).ready(function() {
+$(window).load(function() {
     try {
         if (store.library != 'undefined' &&
             store.library.addPhotos.flag == true) {
